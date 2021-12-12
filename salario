@@ -1,0 +1,55 @@
+from tkinter import *
+def salario():
+    vh = float(input("Valor por hora trabalhada.: "))
+    hm = float(input("Horas trabalhada no mês: "))
+    salario_bruto = vh*hm
+    INSS = 0.08
+    IMP = 0.11
+    SIND = 0.05
+    salario_liq = (salario_bruto) * (INSS + IMP+ SIND)
+
+    print("Salario bruto: {}" .format(salario_bruto))
+
+    desconto_INSS = salario_bruto * INSS
+    print ("Desconto INSS: {}" .format(desconto_INSS))
+
+    desconto_SINS = salario_bruto * SIND
+    print ("Desconto sindicato : {}" .format(desconto_SINS))
+
+    desconto_IMP = salario_bruto * IMP
+    print ("Desconto imposto de renda : {}" .format(desconto_IMP))
+
+
+    desco_total = (salario_bruto) * (INSS + IMP + SIND) 
+
+    print("Desconto total: {}" .format(desco_total))
+
+janela = Tk()
+janela.title('salario') 
+def valor():
+    print(valor) 
+   
+    salario_bruto.get = vh*hm
+    salario_liq.get = (salario_bruto) * (INSS + IMP+ SIND)
+    
+    
+text = Label(janela, text="calculo do  salário ")
+text.grid(column=0, row=0, padx=10, pady=10)
+
+txt_1 = Label(janela, text="Quantas horas você trabalha por mês? ")
+txt_1.grid(column=0, row=1, padx=10, pady=10)
+hm = Entry(janela)
+hm.grid(column=0, row=2, padx=12, pady=10)
+
+txt_2 = Label(janela, text="Quanto você ganha por hora trabalhada? ")
+txt_2.grid(column=0, row=3, padx=10, pady=10)
+vh = Entry(janela)
+vh.grid(column=0, row=4, padx=10, pady=20)
+
+Button(janela, text="Calcular", command=valor, ).grid(column=0, row=5, padx=10, pady=20)
+
+texto_resposta = Label(janela, text="")
+texto_resposta.grid(column=0, row=2, padx=10, pady=10)
+
+
+janela.mainloop()
